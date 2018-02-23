@@ -1,0 +1,14 @@
+version: "2"
+services:
+  node:
+    image: "node:8"
+    build: .
+    user: "node"
+    working_dir: /app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./:/app
+    ports:
+      - "49160:8080"
+    command: "npm start"
